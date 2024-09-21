@@ -1,12 +1,16 @@
 # VogueVista Frontend
 
-This project is created in React and NodeJS with MongoDB as a database.
+This project is created in ReactJS.
+
+## Compatiblity
+
+This project is compatible with NodeJS version 14.21.3 and React version 18.2.0
 
 ## Available Scripts
 
 In the project directory, you can run:
 
-### `npm run dev`
+### `npm run start`
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
