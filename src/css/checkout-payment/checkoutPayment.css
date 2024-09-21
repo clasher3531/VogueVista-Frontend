@@ -1,0 +1,72 @@
+.checkout-shipping-summary-section {
+    margin-top: 3.5rem;
+    background-color: #F2F2F2;
+    padding: 2rem;
+}
+
+.heading-shipping-details {
+    margin-bottom: 2rem;
+    font-weight: 600;
+}
+
+.shipping-address-heading {
+    font-weight: 700;
+}
+
+.shipping-method-heading {
+    font-weight: 700;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+.modify-shipping-link {
+    color: black;
+    &:hover {
+        color: darkgrey
+    }
+}
+
+.heading-payment-details {
+    font-weight: 700;
+    margin-bottom: 2rem;
+}
+
+.heading-billing-details {
+    color: darkgrey;
+    margin-bottom: 1rem;
+}
+
+.card-heading {
+    margin-bottom: 1rem;
+}
+
+.checkout-billing-section {
+    margin-top: 2rem;
+}
+
+@media only screen and (min-width: 992px) {
+    .checkout-billing-section {
+        margin-bottom: 5rem;
+    }
+}
+
+@media only screen and (max-width: 991px) {
+    .checkout-billing-section {
+        margin-bottom: 1rem;
+    }
+}
+
+.order-confirm-main {
+    text-align: center;
+    margin-top: 4rem;
+}
+
+.order-section {
+    margin-top: 2rem;
+    background-color: #F3F2EEff;
+    padding: 2rem;
+}
+
+.order-number, .order-email-info {
+    margin-top: 2rem;
+}

@@ -1,0 +1,799 @@
+@media only screen and (max-width: 460px) {
+    .hero-main {
+        color: black;
+        background-image: url('https://themewagon.github.io/malefashion/img/hero/hero-1.jpg');
+        background-size: 100% 100%;
+        height: 200px;
+        width: auto;
+        margin-left: -10px;
+        margin-right: -10px;
+    }
+
+    .heading-hero-main {
+        padding-top: 5rem;
+        padding-left: 1.5rem;
+    }
+
+    .tag-main {
+        font-size: 0.5rem;
+        font-weight: 600;
+    }
+
+    .button-explore {
+        margin-top: 0.5rem;
+        margin-left: 2rem;
+        padding: 0.3rem 0.6rem 0.3rem 0.6rem;
+        font-size: 0.4rem;
+    }
+
+    .campaign-main {
+        text-align: center;
+        font-size: 9px;
+        background-color: black;
+        color: white;
+        margin-top: -10px;
+        margin-left: -10px;
+        margin-right: -10px;
+    }
+
+    .why-shop-heading {
+        text-align: center;
+        font-size: 1.2rem;
+        font-weight: 600;
+    }
+    
+    .why-shop-heading::after {
+        content: "";
+        display: block;
+        width: 45px;
+        height: 2px;
+        background: #f7444e;
+        margin: 10px auto 10px;
+    }
+    
+    .why-shop-tag {
+        text-align: center;
+        margin-top: 2rem;
+        padding: 1rem;
+    }
+
+    .tag-heading {
+        font-weight: 600;
+        font-size: 1rem;
+    }
+    
+    .tag-text {
+        font-size: 0.7rem;
+    }
+
+    .new-arrival-banner-image .new-arrival-image {
+        width: 300px;
+        height: 200px;
+        margin-left: 0rem;
+    }
+
+    .new-arrivals-main {
+        height: 200px;
+    }
+    
+    .new-arrival-banner {
+        margin-top: 3.5rem;
+        margin-left: -11rem;
+    }
+    
+    .new-arrival-banner-heading {
+        font-size: 1.2rem;
+        font-weight: 600;
+        margin-bottom: 0.3rem;
+    }
+    
+    .new-arrival-banner-description {
+        display: none;
+    }
+
+    .new-arrivals-banner-button > button {
+        font-size: 0.5rem;
+    }
+    
+    .featured-heading {
+        margin-bottom: 1.5rem;
+    }
+    
+    .featured-main {
+        margin: 3rem 1rem 1rem 1rem
+    }
+
+    .navbar-small-main {
+        float: left;
+    }
+}
+
+@media only screen and (min-width: 461px) and (max-width: 649px) {
+    .hero-main {
+        color: black;
+        background-image: url('https://themewagon.github.io/malefashion/img/hero/hero-1.jpg');
+        background-size: 100% 100%;
+        height: 250px;
+        width: auto;
+        margin-left: -10px;
+        margin-right: -10px;
+    }
+
+    .heading-hero-main {
+        padding-top: 7rem;
+        padding-left: 2rem;
+    }
+
+    .tag-main {
+        font-size: 0.7rem;
+        font-weight: 600;
+    }
+    
+    .button-explore {
+        margin-top: 0.7rem;
+        margin-left: 3rem;
+        padding: 0.4rem 0.7rem 0.4rem 0.7rem;
+        font-size: 0.5rem;
+    }
+
+    .campaign-main {
+        text-align: center;
+        font-size: 12px;
+        background-color: black;
+        color: white;
+        margin-top: -10px;
+        margin-left: -10px;
+        margin-right: -10px;
+    }
+
+    .why-shop-heading {
+        text-align: center;
+        font-size: 1.5rem;
+        font-weight: 600;
+    }
+    
+    .why-shop-heading::after {
+        content: "";
+        display: block;
+        width: 50px;
+        height: 2px;
+        background: #f7444e;
+        margin: 10px auto 10px;
+    }
+    
+    .why-shop-tag {
+        text-align: center;
+        margin-top: 2rem;
+        padding: 1rem;
+    }
+
+    .tag-heading {
+        font-weight: 600;
+        font-size: 0.8rem;
+    }
+    
+    .tag-text {
+        font-size: 0.7rem;
+    }
+
+    .new-arrival-banner-image .new-arrival-image {
+        width: 500px;
+        height: 250px;
+        margin-left: 0rem;
+    }
+
+    .new-arrivals-main {
+        height: 250px;
+    }
+    
+    .new-arrival-banner {
+        margin-top: 3rem;
+        margin-left: -12rem;
+    }
+    
+    .new-arrival-banner-heading {
+        font-size: 1.5rem;
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+    }
+    
+    .new-arrival-banner-description {
+        font-size: 0.7rem;
+        margin-bottom: 0.8rem;
+    }
+
+    .new-arrivals-banner-button > button {
+        font-size: 0.6rem;
+    }
+    
+    .featured-heading {
+        margin-bottom: 1.5rem;
+    }
+    
+    .featured-main {
+        margin: 3rem 1rem 1rem 1rem
+    }
+
+    .navbar-small-main {
+        float: left;
+        margin-left: 1rem;
+    }
+}
+
+@media only screen and (min-width: 650px) and (max-width: 899px) {
+    .hero-main {
+        color: black;
+        background-image: url('https://themewagon.github.io/malefashion/img/hero/hero-1.jpg');
+        background-size: 100% 100%;
+        height: 350px;
+        width: auto;
+        margin-left: -10px;
+        margin-right: -10px;
+    }
+
+    .heading-hero-main {
+        padding-top: 9rem;
+        padding-left: 2rem;
+    }
+
+    .tag-main {
+        font-size: 1rem;
+        font-weight: 600;
+    }
+    
+    .button-explore {
+        margin-top: 1rem;
+        margin-left: 3rem;
+        padding: 0.4rem 0.7rem 0.4rem 0.7rem;
+        font-size: 0.7rem;
+    }
+
+    .campaign-main {
+        text-align: center;
+        font-size: 12px;
+        background-color: black;
+        color: white;
+        margin-top: -10px;
+        margin-left: -10px;
+        margin-right: -10px;
+    }
+
+    .why-shop-heading {
+        text-align: center;
+        font-size: 1.7rem;
+        font-weight: 600;
+    }
+    
+    .why-shop-heading::after {
+        content: "";
+        display: block;
+        width: 55px;
+        height: 3px;
+        background: #f7444e;
+        margin: 10px auto 10px;
+    }
+    
+    .why-shop-tag {
+        text-align: center;
+        margin-top: 2rem;
+        padding: 1rem;
+    }
+
+    .tag-heading {
+        font-weight: 600;
+        font-size: 0.9rem;
+    }
+    
+    .tag-text {
+        font-size: 0.7rem;
+    }
+
+    .new-arrival-banner-image .new-arrival-image {
+        width: 600px;
+        height: 350px;
+        margin-left: 0rem;
+    }
+
+    .new-arrivals-main {
+        height: 350px;
+    }
+    
+    .new-arrival-banner {
+        margin-top: 5rem;
+        margin-left: -14rem;
+    }
+    
+    .new-arrival-banner-heading {
+        font-size: 2rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+    }
+    
+    .new-arrival-banner-description {
+        font-size: 0.8rem;
+        margin-bottom: 0.8rem;
+    }
+
+    .new-arrivals-banner-button > button {
+        font-size: 0.7rem;
+    }
+    
+    .featured-heading {
+        margin-bottom: 1rem;
+    }
+    
+    .featured-main {
+        margin: 3rem 1rem 0.5rem 1rem
+    }
+
+    .navbar-small-main {
+        float: left;
+        margin-left: 2.5rem;
+    }
+}
+
+@media only screen and (min-width: 900px) and (max-width: 1150px) {
+    .hero-main {
+        color: black;
+        background-image: url('https://themewagon.github.io/malefashion/img/hero/hero-1.jpg');
+        background-size: 100% 100%;
+        height: 500px;
+        width: auto;
+        margin-left: -10px;
+        margin-right: -10px;
+    }
+
+    .heading-hero-main {
+        padding-top: 13rem;
+        padding-left: 4rem;
+    }
+
+    .tag-main {
+        font-size: 1.2rem;
+        font-weight: 600;
+    }
+    
+    .button-explore {
+        margin-top: 1rem;
+        margin-left: 3rem;
+        padding: 0.6rem 1.5rem 0.6rem 1.5rem;
+        font-size: 0.8rem;
+    }
+
+    .campaign-main {
+        text-align: center;
+        font-size: 12px;
+        background-color: black;
+        color: white;
+        margin-top: -10px;
+        margin-left: -10px;
+        margin-right: -10px;
+    }
+
+    .why-shop-heading {
+        text-align: center;
+        font-size: 2rem;
+        font-weight: 600;
+    }
+    
+    .why-shop-heading::after {
+        content: "";
+        display: block;
+        width: 60px;
+        height: 4px;
+        background: #f7444e;
+        margin: 10px auto 10px;
+    }
+    
+    .why-shop-tag {
+        text-align: center;
+        margin-top: 2rem;
+        padding: 1rem;
+    }
+
+    .tag-heading {
+        font-weight: 600;
+        font-size: 1rem;
+    }
+    
+    .tag-text {
+        font-size: 0.7rem;
+    }
+
+    .new-arrival-banner-image .new-arrival-image {
+        width: 750px;
+        height: 450px;
+        margin-left: 2rem;
+    }
+    
+    .new-arrival-banner {
+        margin-top: 7rem;
+        margin-left: -12rem;
+    }
+    
+    .new-arrival-banner-heading {
+        font-size: 2.2rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+    }
+    
+    .new-arrival-banner-description {
+        font-size: 0.9rem;
+        margin-bottom: 0.8rem;
+    }
+
+    .new-arrivals-banner-button > button {
+        font-size: 0.7rem;
+    }
+    
+    .featured-heading {
+        margin-bottom: 1.1rem;
+    }
+    
+    .featured-main {
+        margin: 4rem 1rem 0.8rem 1rem
+    }
+
+    .navbar-small-main {
+        float: left;
+        margin-left: 2.5rem;
+    }
+}
+
+@media only screen and (min-width: 1151px) and (max-width: 1349px) {
+    .hero-main {
+        color: black;
+        background-image: url('https://themewagon.github.io/malefashion/img/hero/hero-1.jpg');
+        background-size: 100% 100%;
+        height: 600px;
+        width: auto;
+        margin-left: -10px;
+        margin-right: -10px;
+    }
+
+    .tag-main {
+        font-size: 1.5rem;
+        font-weight: 600;
+    }
+
+    .heading-hero-main {
+        padding-top: 17rem;
+        padding-left: 4rem;
+    }
+    
+    .button-explore {
+        margin-top: 1rem;
+        margin-left: 3rem;
+        padding: 0.6rem 3rem 0.6rem 3rem
+    }
+
+    .campaign-main {
+        text-align: center;
+        font-size: 12px;
+        background-color: black;
+        color: white;
+        margin-top: -10px;
+        margin-left: -10px;
+        margin-right: -10px;
+    }
+
+    .why-shop-heading {
+        text-align: center;
+        font-size: 2.5rem;
+        font-weight: 600;
+    }
+    
+    .why-shop-heading::after {
+        content: "";
+        display: block;
+        width: 65px;
+        height: 5px;
+        background: #f7444e;
+        margin: 10px auto 10px;
+    }
+    
+    .why-shop-tag {
+        text-align: center;
+        margin-top: 2rem;
+        padding: 1rem;
+    }
+
+    .tag-heading {
+        font-weight: 600;
+        font-size: 1rem;
+    }
+    
+    .tag-text {
+        font-size: 0.7rem;
+    }
+
+    .new-arrival-banner-image .new-arrival-image {
+        width: 750px;
+        height: 450px;
+        margin-left: 2rem;
+    }
+    
+    .new-arrival-banner {
+        margin-top: 5rem;
+        margin-left: -15rem;
+    }
+    
+    .new-arrival-banner-heading {
+        font-size: 2.8rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+    }
+    
+    .new-arrival-banner-description {
+        font-size: 0.9rem;
+        margin-bottom: 0.8rem;
+    }
+
+    .new-arrivals-banner-button > button {
+        font-size: 0.8rem;
+    }
+    
+    .featured-heading {
+        margin-bottom: 1.5rem;
+    }
+    
+    .featured-main {
+        margin: 4rem 1rem 1rem 1rem
+    }
+
+    .navbar-small-main {
+        float: left;
+        margin-left: 2.5rem;
+    }
+}
+
+@media only screen and (min-width: 1350px) {
+    .hero-main {
+        color: black;
+        background-image: url('https://themewagon.github.io/malefashion/img/hero/hero-1.jpg');
+        background-size: 100% 100%;
+        height: 800px;
+        width: auto;
+        margin-left: -10px;
+        margin-right: -10px;
+    }
+    .heading-hero-main {
+        padding-top: 17rem;
+        padding-left: 4rem;
+    }
+
+    .tag-main {
+        font-size: 2rem;
+        font-weight: 600;
+    }
+    
+    .button-explore {
+        margin-top: 1rem;
+        margin-left: 3rem;
+        padding: 0.6rem 3rem 0.6rem 3rem
+    }
+
+    .campaign-main {
+        text-align: center;
+        font-size: 12px;
+        background-color: black;
+        color: white;
+        margin-top: -10px;
+        margin-left: -10px;
+        margin-right: -10px;
+    }
+
+    .why-shop-heading {
+        text-align: center;
+        font-size: 3rem;
+        font-weight: 600;
+    }
+    
+    .why-shop-heading::after {
+        content: "";
+        display: block;
+        width: 70px;
+        height: 5px;
+        background: #f7444e;
+        margin: 10px auto 10px;
+    }
+    
+    .why-shop-tag {
+        text-align: center;
+        margin-top: 2rem;
+        padding: 1rem;
+    }
+
+    .tag-heading {
+        font-weight: 600;
+        font-size: 1.3rem;
+    }
+    
+    .tag-text {
+        font-size: 0.8rem;
+    }
+
+    .new-arrival-banner-image .new-arrival-image {
+        width: 750px;
+        height: 450px;
+        margin-left: 2rem;
+    }
+    
+    .new-arrival-banner {
+        margin-top: 5.5rem;
+        margin-left: -7.5rem;
+    }
+    
+    .new-arrival-banner-heading {
+        font-size: 3rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+    }
+    
+    .new-arrival-banner-description {
+        font-size: 0.9rem;
+        margin-bottom: 0.8rem;
+    }
+
+    .new-arrivals-banner-button > button {
+        font-size: 0.9rem;
+    }
+    
+    .featured-heading {
+        margin-bottom: 1.5rem;
+    }
+    
+    .featured-main {
+        margin: 5rem 1rem 2rem 1rem
+    }
+
+    .navbar-small-main {
+        float: left;
+        margin-left: 2.5rem;
+    }
+}
+
+.campaign-text {
+    padding: 3px 0px 3px 0px;
+    font-family:sans-serif
+}
+
+.why-shopping-main {
+    margin: 2rem;
+}
+
+.shop-tag-main > .why-shop-tag {
+    background-color: #F2F2F2;
+    border: 5px solid white
+}
+
+.new-arrivals-main {
+    background-color: #d4ced0;
+    margin-left: -10px;
+    margin-right: -10px;
+}
+
+.featured-heading-text {
+    margin-left: 1rem;
+    border-left: 4px solid #ee4266;
+}
+
+.featured-heading-text > h2 {
+    padding-left: 30px;
+}
+
+.featured-view-all > a {
+    text-decoration: none;
+    color: black;
+    float: right;
+    margin-right: 1rem;
+    font-weight: 600;
+    &:hover {
+        color: #ee4266
+    }
+}
+
+.Header {
+    padding: 1.5rem 0.5rem 1.5rem 0.5rem;
+    background-color: #F3F2EEff;
+    margin-left: -10px;
+    margin-right: -10px;
+    margin-top: -16px;
+}
+
+.menu {
+    float: right;
+}
+
+.menu .menu-item {
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.menu-item > a {
+    color: black;
+    &:hover {
+        color: gray;
+        border-bottom: 4px solid #ee4266
+    }
+}
+
+.icons-main {
+    margin-top: 2px;
+}
+
+@media only screen and (max-width: 767px) {
+    .menu-main {
+        display: none;
+    }
+    .login-main {
+        display: none;
+    }
+
+    .icons-main {
+        float: left
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .small-menu {
+        display: none;
+    }
+}
+
+.login-main {
+    cursor: pointer;
+}
+
+.small-menu > img {
+    float: right;
+    margin-top: 6px;
+}
+
+ul {
+    list-style-type: none
+}
+
+.navbar-small-main > ul > li {
+    font-weight: 600;
+    padding: 1rem;
+}
+
+.cross-img {
+    margin-top: -30px;
+}
+
+.dropdown-menu > li > a {
+    font-weight: 600;
+    padding: 0.8rem;
+    &:hover {
+        color: gray;
+    }
+}
+
+#navbarDropdown {
+    &:focus{
+        color: gray
+    }
+}
+
+.navbar-small-main > ul > li > a {
+    text-decoration: none;
+    color: black;
+    &:hover{
+        color: gray;
+    }
+}
+
+.menu-item-dropdown > li {
+    padding: 0.5rem;
+    margin-top: 5px;
+}
+
+.menu-item-dropdown > li > a {
+    text-decoration: none;
+    color: black;
+    &:hover {
+        color: gray;
+    }
+}

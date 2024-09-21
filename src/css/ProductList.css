@@ -1,0 +1,11 @@
+.productListing {
+    margin-top: 2rem;
+}
+
+.productListing > h2 {
+    margin-bottom: 2rem;
+    font-weight: 600;
+    padding-left: 25px;
+    border-left: 4px solid #ee4266;
+    margin-left: 1rem;
+}

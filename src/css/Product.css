@@ -1,0 +1,226 @@
+@media only screen and (max-width: 460px) {
+    .product-card-main {
+        height: 17rem;
+        padding: 2rem;
+        margin: 10px;
+        border: 2px solid lightgray;
+        object-fit: cover
+    }
+
+    .card-title {
+        font-size: 10px;
+        font-weight: 600;
+        margin-top: 0.5rem;
+    }
+    
+    .card-price {
+        font-size: 9px;
+        margin-top: 18px;
+    }
+    
+    .add-to-cart-button {
+        width: 100%;
+        margin-top: 0rem;
+        font-size: 7px;
+    }
+
+    .product-image-main {
+        height: 7rem;
+        object-fit: fill;
+    }
+}
+
+@media only screen and (min-width: 461px) and (max-width: 649px) {
+    .product-card-main {
+        height: 22rem;
+        padding: 2rem;
+        margin: 10px;
+        border: 2px solid lightgray;
+        object-fit: cover
+    }
+
+    .card-title {
+        margin-top: 0.5rem;
+        font-size: 12px;
+        font-weight: 600;
+    }
+    
+    .card-price {
+        font-size: 11px;
+        margin-top: 18px;
+    }
+    
+    .add-to-cart-button {
+        width: 100%;
+        margin-top: 1rem;
+        font-size: 12px;
+    }
+
+    .product-image-main {
+        height: 12rem;
+        object-fit: fill;
+    }
+}
+
+@media only screen and (min-width: 650px) and (max-width: 991px) {
+    .product-card-main {
+        height: 25rem;
+        padding: 2rem;
+        margin: 10px;
+        border: 2px solid lightgray;
+        object-fit: cover
+    }
+
+    .card-title {
+        font-size: 15px;
+        font-weight: 600;
+        margin-top: 1rem;
+    }
+    
+    .card-price {
+        font-size: 15px;
+        margin-top: 18px;
+    }
+    
+    .add-to-cart-button {
+        width: 100%;
+        margin-top: 1rem;
+    }
+
+    .product-image-main {
+        width: 14rem;
+        height: 12rem;
+        object-fit: fill;
+    }
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1115px) {
+    .product-card-main {
+        height: 21rem;
+        padding: 2rem;
+        margin: 10px;
+        border: 2px solid lightgray;
+        object-fit: cover
+    }
+
+    .card-title {
+        font-size: 13px;
+        font-weight: 600;
+        margin-top: 1.3rem;
+    }
+    
+    .card-price {
+        font-size: 11px;
+        margin-top: 18px;
+    }
+    
+    .add-to-cart-button {
+        width: 100%;
+        font-size: 11px;
+        margin-top: 0rem;
+    }
+
+    .product-image-main {
+        height: 10rem;
+        object-fit: fill;
+    }
+ 
+}
+
+@media only screen and (min-width: 1116px) and (max-width: 1150px) {
+    .product-card-main {
+        height: 23rem;
+        padding: 2rem;
+        margin: 10px;
+        border: 2px solid lightgray;
+        object-fit: cover
+    }
+
+    .card-title {
+        font-size: 13px;
+        font-weight: 600;
+        margin-top: 1.3rem;
+    }
+    
+    .card-price {
+        font-size: 11px;
+        margin-top: 18px;
+    }
+    
+    .add-to-cart-button {
+        width: 100%;
+        font-size: 11px;
+        margin-top: 0.5rem;
+    }
+
+    .product-image-main {
+        height: 12rem;
+        object-fit: fill;
+    }
+ 
+}
+
+@media only screen and (min-width: 1151px) and (max-width: 1349px) {
+    .product-card-main {
+        height: 25rem;
+        padding: 2rem;
+        margin: 10px;
+        border: 2px solid lightgray;
+        object-fit: cover
+    }
+
+    .card-title {
+        font-size: 14px;
+        font-weight: 600;
+        margin-top: 1.2rem;
+    }
+    
+    .card-price {
+        font-size: 12px;
+        margin-top: 18px;
+    }
+    
+    .add-to-cart-button {
+        width: 100%;
+        font-size: 12px;
+        margin-top: 2rem;
+    }
+
+    .product-image-main {
+        width: 11rem;
+        height: 12rem;
+        object-fit: fill;
+    }
+}
+
+@media only screen and (min-width: 1350px) {
+    .product-card-main {
+        height: 25rem;
+        padding: 2rem;
+        margin: 10px;
+        border: 2px solid lightgray;
+        object-fit: cover
+    }
+
+    .card-title {
+        font-size: 15px;
+        font-weight: 600;
+        margin-top: 1rem;
+    }
+    
+    .card-price {
+        font-size: 15px;
+        margin-top: 18px;
+    }
+    
+    .add-to-cart-button {
+        width: 100%;
+        margin-top: 2rem;
+    }
+
+    .product-image-main {
+        width: 13rem;
+        height: 12rem;
+        object-fit: fill;
+    }
+}

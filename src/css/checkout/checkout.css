@@ -1,0 +1,103 @@
+@media only screen and (max-width: 991px) {
+    .guest-container {
+        padding-bottom: 1rem;
+        border-bottom: 1px solid grey;
+    }
+    .login-container {
+        padding-top: 1rem;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    .guest-container {
+        border-right: 1px solid grey;
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    .login-container {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+}
+
+.checkout-logo {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.checkout-login-section{
+    margin-top: 4rem;
+    background-color: #F3F2EEff;
+    padding: 1.2rem;
+}
+
+.guest-heading, .login-heading {
+    font-weight: 600;
+    margin-bottom: 1.2rem;
+    font-size: 15px;
+}
+
+.guest-container > p, .login-container > p {
+    font-size: small;
+    margin-bottom: 1.5rem
+}
+
+.checkout-heading > h3 {
+    margin-top: 2rem;
+}
+
+.register-button {
+    margin-right: 0.5rem;
+}
+
+.checkout-shipping {
+    margin-top: 3rem;
+}
+.shipping-form {
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+}
+
+.checkout-shipping-method {
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+}
+
+.checkout-shipping-method > p {
+    font-size: small;
+    margin-top: 1rem;
+}
+
+.shipping-method-form {
+    margin-bottom: 1rem;
+    margin-top: 2rem;
+}
+
+.shipping-method-radio > label {
+    margin-left: 1rem;
+    font-weight: 600;
+}
+
+.checkout-summary-main {
+    margin-top: 2rem;
+    font-weight: 600;
+    padding: 2rem;
+}
+
+.checkout-summary-main {
+    background-color: #F3F2EEff;
+}
+
+.proceed-checkout-payment-details {
+    margin: 30px 2px 10px 2px
+}
+
+.cartpage-subtotal {
+    border:2px solid grey;
+    margin-top:1rem;
+    padding:20px 30px 20px 30px
+}
+
+.sub-total, .sales-tax, .shipping-method, .net-price {
+    margin:10px 2px 10px 2px
+}
