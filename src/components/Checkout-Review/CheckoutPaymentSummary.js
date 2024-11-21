@@ -1,8 +1,10 @@
 import React from "react";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import { useNavigate } from "react-router-dom";
 
 function CheckoutPaymentSummary(props) {
+  const navigate = useNavigate();
   var payment = props.payment ? props.payment : null;
   return (
     <div className="checkout-shipping-summary-section">
@@ -14,9 +16,12 @@ function CheckoutPaymentSummary(props) {
           </u>
         </Col>
         <Col xs={3} sm={3} md={3} lg={3}>
-          <a className="modify-shipping-link" href="/checkout/payment">
+          <p
+            className="modify-shipping-link"
+            onClick={() => navigate("/checkout/payment")}
+          >
             Modify
-          </a>
+          </p>
         </Col>
       </Row>
       <br></br>

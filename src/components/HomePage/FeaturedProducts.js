@@ -2,9 +2,11 @@ import React from "react";
 import { fetchAllProducts } from "../../services/productFetchService";
 import ProductCard from "../Product/ProductCard";
 import { Row, Col } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
 
 function FeaturedProducts() {
   var [ProductData, setProducts] = React.useState([]);
+  var navigate = useNavigate();
   function getProductData() {
     fetchAllProducts()
       .then((productResponse) => {
@@ -35,9 +37,12 @@ function FeaturedProducts() {
           </Col>
           <Col xs={5} sm={5} md={5} lg={5}>
             <div className="featured-view-all">
-              <a href="/allProducts" className="view-all-link">
+              <p
+                className="view-all-link"
+                onClick={() => navigate("/allProducts")}
+              >
                 View All
-              </a>
+              </p>
             </div>
           </Col>
         </Row>

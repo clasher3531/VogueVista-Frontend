@@ -1,15 +1,36 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 function Menu() {
+  const navigate = useNavigate();
+  const handleMenuRedirect = function (event) {
+    var id = event.target.id;
+    if (id === "navbarDropdown") {
+      return;
+    }
+    if (id === "home-link") {
+      navigate("/");
+      return;
+    } else if (id === "services") {
+      navigate("/services");
+    } else if (id === "contact-us") {
+      navigate("contact-us");
+    } else {
+      navigate("/products/" + id);
+    }
+  };
   return (
-    <ul className="nav justify-content-center menu">
+    <ul
+      className="nav justify-content-center menu"
+      onClick={handleMenuRedirect}
+    >
       <li className="nav-item menu-item">
-        <a className="nav-link" href="/">
+        <p className="nav-link" id="home-link">
           Home
-        </a>
+        </p>
       </li>
       <li className="nav-item menu-item">
-        <a
+        <p
           className="nav-link"
           href="*"
           id="navbarDropdown"
@@ -18,39 +39,39 @@ function Menu() {
           aria-expanded="false"
         >
           Shop
-        </a>
+        </p>
         <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
           <li>
-            <a className="dropdown-item" href="/products/mens-clothing">
+            <p className="dropdown-item" id="mens-clothing">
               Men
-            </a>
+            </p>
           </li>
           <li>
-            <a className="dropdown-item" href="/products/women-clothing">
+            <p className="dropdown-item" id="women-clothing">
               Women
-            </a>
+            </p>
           </li>
           <li>
-            <a className="dropdown-item" href="/products/jewellery">
+            <p className="dropdown-item" id="jewellery">
               Jewellery
-            </a>
+            </p>
           </li>
           <li>
-            <a className="dropdown-item" href="/products/electronics">
+            <p className="dropdown-item" id="electronics">
               Electronics
-            </a>
+            </p>
           </li>
         </ul>
       </li>
       <li className="nav-item menu-item">
-        <a className="nav-link" href="*">
+        <p className="nav-link" id="services">
           Services
-        </a>
+        </p>
       </li>
       <li className="nav-item menu-item">
-        <a className="nav-link" href="*">
+        <p className="nav-link" id="contact-us">
           Contact us
-        </a>
+        </p>
       </li>
     </ul>
   );
