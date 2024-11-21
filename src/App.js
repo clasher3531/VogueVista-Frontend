@@ -52,7 +52,7 @@ export const reactRouter = createBrowserRouter([
       },
       {
         path: "/allProducts",
-        element: <AllProducts category={"All Products"} />,
+        element: <AllProducts category={"Vogue Vista Collection"} />,
       },
       {
         path: "/products/mens-clothing",
