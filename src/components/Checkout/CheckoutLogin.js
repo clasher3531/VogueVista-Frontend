@@ -12,11 +12,14 @@ function CheckoutLogin(props) {
   const [isEmailValid, setEmailValid] = React.useState(false);
   const [emailAddress, setEmail] = React.useState(null);
   const { basketData, setBasketData } = useContext(BasketContext);
-  React.useEffect(function () {
-    if (basketData && basketData.email) {
-      setEmail(basketData.email);
-    }
-  }, []);
+  React.useEffect(
+    function () {
+      if (basketData.email) {
+        setEmail(basketData.email);
+      }
+    },
+    [basketData.email]
+  );
   const handleSubmit = async (event) => {
     const form = event.target;
     event.preventDefault();

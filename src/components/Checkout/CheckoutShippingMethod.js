@@ -24,24 +24,22 @@ function CheckoutShippingMethod(props) {
   }
   React.useEffect(
     function () {
-      if (basketData) {
-        if (
-          basketData.shippingMethod === Constants.STDMETHOD &&
-          stdDelivery.current
-        ) {
-          stdDelivery.current.checked = true;
-        } else if (
-          basketData.shippingMethod === Constants.SATMETHOD &&
-          satDelivery.current
-        ) {
-          satDelivery.current.checked = true;
-        } else if (stdDelivery.current) {
-          stdDelivery.current.checked = true;
-        }
-        window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+      if (
+        basketData.shippingMethod === Constants.STDMETHOD &&
+        stdDelivery.current
+      ) {
+        stdDelivery.current.checked = true;
+      } else if (
+        basketData.shippingMethod === Constants.SATMETHOD &&
+        satDelivery.current
+      ) {
+        satDelivery.current.checked = true;
+      } else if (stdDelivery.current) {
+        stdDelivery.current.checked = true;
       }
+      window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
     },
-    [stdDelivery, satDelivery]
+    [basketData.shippingMethod, satDelivery, stdDelivery]
   );
   return (
     <div className="checkout-shipping-method">
