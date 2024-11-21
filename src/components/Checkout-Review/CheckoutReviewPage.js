@@ -1,30 +1,18 @@
-import React from "react";
+import React, { useContext } from "react";
 import CheckoutShippingSummary from "../Checkout-Payment/CheckoutShippingSummary";
-import { getBasket } from "../../helpers/basketHelper";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import CheckoutSummary from "../Checkout/CheckoutSummary";
 import CheckoutPaymentSummary from "./CheckoutPaymentSummary";
+import { BasketContext } from "../../Context/BasketContext";
 import "../../css/checkout-payment/checkoutPayment.css";
 
 function CheckoutReviewPage() {
-  var [basket, setBasket] = React.useState({});
-  React.useEffect(
-    function () {
-      getBasket()
-        .then((currentBasket) => {
-          if (currentBasket) {
-            setBasket(currentBasket);
-            window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
-          }
-        })
-        .catch((e) => {
-          return null;
-        });
-    },
-    [basket.id, basket.totalPrice]
-  );
+  const { basketData } = useContext(BasketContext);
+  React.useEffect(function () {
+    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+  }, []);
   return (
     <div className="checkout-payment-page-main">
       <div className="checkout-section">
@@ -34,26 +22,30 @@ function CheckoutReviewPage() {
               <div className="checkout-shipping-summary">
                 <CheckoutShippingSummary
                   shippingAddress={
-                    basket && basket.shippingAddress
-                      ? basket.shippingAddress
+                    basketData && basketData.shippingAddress
+                      ? basketData.shippingAddress
                       : ""
                   }
                   shippingMethod={
-                    basket && basket.shippingMethod ? basket.shippingMethod : ""
+                    basketData && basketData.shippingMethod
+                      ? basketData.shippingMethod
+                      : ""
                   }
                   isReviewPage={true}
                 />
               </div>
               <div className="checkout-payment-summary">
                 <CheckoutPaymentSummary
-                  payment={basket && basket.payment ? basket.payment : ""}
+                  payment={
+                    basketData && basketData.payment ? basketData.payment : ""
+                  }
                 />
               </div>
             </Col>
             <Col xs={12} sm={12} md={12} lg={5}>
               <div className="checkout-summary">
                 <CheckoutSummary
-                  basketData={basket}
+                  basketData={basketData}
                   isPaymentPage={true}
                   isReviewPage={true}
                 />

@@ -12,11 +12,12 @@ import CheckoutReviewPage from "../src/components/Checkout-Review/CheckoutReview
 import OrderConfirm from "../src/components/Checkout-Review/OrderConfirm";
 import AllProducts from "../src/components/Category/AllProducts";
 import { createBrowserRouter, Outlet } from "react-router-dom";
+import { BasketContext } from "./Context/BasketContext";
 import "./App.css";
 
 function App() {
   var [basketData, setBasketData] = React.useState({});
-  function onLoadHandler() {
+  React.useEffect(function () {
     getBasket()
       .then((currentBasket) => {
         if (currentBasket) {
@@ -26,14 +27,16 @@ function App() {
       .catch((e) => {
         return null;
       });
-  }
+  }, []);
   return (
-    <div className="App" onLoad={onLoadHandler}>
-      <Campaign />
-      <HeaderUtility basketData={basketData} setBasketData={setBasketData} />
-      <Outlet />
-      <Footer />
-    </div>
+    <BasketContext.Provider value={{ basketData, setBasketData }}>
+      <div className="App">
+        <Campaign />
+        <HeaderUtility />
+        <Outlet />
+        <Footer />
+      </div>
+    </BasketContext.Provider>
   );
 }
 

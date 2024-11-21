@@ -1,42 +1,28 @@
-import React from "react";
+import React, { useContext } from "react";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import {
-  getBasket,
-  shippingMethodChangeNetPrice,
-} from "../../helpers/basketHelper";
+import { shippingMethodChangeNetPrice } from "../../helpers/basketHelper";
 import CheckoutLogin from "./CheckoutLogin";
 import CheckoutShipping from "./CheckoutShipping";
 import CheckoutShippingMethod from "./CheckoutShippingMethod";
 import CheckoutSummary from "./CheckoutSummary";
+import { BasketContext } from "../../Context/BasketContext";
 import "../../css/checkout/checkout.css";
 
 function CheckoutPage() {
-  var [basket, setBasket] = React.useState({});
+  const { basketData, setBasketData } = useContext(BasketContext);
   var shippingButton = React.createRef();
   var emailAddressButton = React.createRef();
   var emailAddressInput = React.createRef();
-  React.useEffect(
-    function () {
-      getBasket()
-        .then((currentBasket) => {
-          if (currentBasket) {
-            setBasket(currentBasket);
-            window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
-          }
-        })
-        .catch((e) => {
-          return null;
-        });
-    },
-    [basket.id, basket.totalPrice]
-  );
+  React.useEffect(function () {
+    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+  }, []);
   function shippingMethodChangeHandler(shipMethodData) {
     shippingMethodChangeNetPrice(shipMethodData)
-      .then((currentBasket) => {
-        if (currentBasket) {
-          setBasket(currentBasket);
+      .then((currentBasketResponse) => {
+        if (!currentBasketResponse.error) {
+          setBasketData(currentBasketResponse.basket);
         }
       })
       .catch((e) => {
@@ -51,28 +37,27 @@ function CheckoutPage() {
             <div className="checkout-login">
               <CheckoutLogin
                 emailaddressbutton={emailAddressButton}
-                basketData={basket}
                 emailref={emailAddressInput}
               />
             </div>
             <div className="checkout-shipping">
               <CheckoutShipping
                 shippingbuttonref={shippingButton}
-                shippingAddress={basket.shippingAddress}
+                shippingAddress={basketData.shippingAddress}
                 emailrefinput={emailAddressInput}
               />
             </div>
             <div className="checkout-shipping-method">
               <CheckoutShippingMethod
                 shippingmethodchangehandler={shippingMethodChangeHandler}
-                selectedshippingmethod={basket.shippingMethod}
+                selectedshippingmethod={basketData.shippingMethod}
               />
             </div>
           </Col>
           <Col xs={12} sm={12} md={12} lg={5}>
             <div className="checkout-summary">
               <CheckoutSummary
-                basketData={basket}
+                basketData={basketData}
                 shippingbuttonref={shippingButton}
                 emailaddressbutton={emailAddressButton}
               />

@@ -1,30 +1,25 @@
-import React from "react";
+import React, { useContext } from "react";
 import Button from "react-bootstrap/Button";
 import Col from "react-bootstrap/Col";
 import Form from "react-bootstrap/Form";
 import Row from "react-bootstrap/Row";
 import {
-  getBasket,
   setBasketShippingAddress,
   copyShippingAddressToBilling,
 } from "../../helpers/basketHelper";
 import { useNavigate } from "react-router-dom";
+import { BasketContext } from "../../Context/BasketContext";
 const emailRegex = /[A-Za-z0-9._%+]+@[a-z0-9A-Z]+\.[a-z]{2,}$/;
 
 function CheckoutShipping(props) {
   const navigate = useNavigate();
+  const { basketData, setBasketData } = useContext(BasketContext);
   const [validated, setValidated] = React.useState(false);
   const [shippingAddress, setShippingAddress] = React.useState({});
   React.useEffect(function () {
-    getBasket()
-      .then((currentBasket) => {
-        if (currentBasket) {
-          setShippingAddress(currentBasket.shippingAddress);
-        }
-      })
-      .catch((e) => {
-        return null;
-      });
+    if (basketData) {
+      setShippingAddress(basketData.shippingAddress);
+    }
   }, []);
   const handleSubmit = async (event) => {
     const form = event.target;
@@ -49,14 +44,17 @@ function CheckoutShipping(props) {
     if (isFormValid) {
       setValidated(false);
       var basketResponse = await setBasketShippingAddress(formData);
-      if (basketResponse) {
+      if (!basketResponse.error) {
         var email = emailRegex.test(props.emailrefinput.current.value);
         if (email) {
           var response = await copyShippingAddressToBilling(formData);
-          if (response) {
+          if (!response.error) {
+            setBasketData(response.basket);
             navigate("/checkout/payment");
+            return;
           }
         }
+        setBasketData(basketResponse.basket);
       }
     }
   };

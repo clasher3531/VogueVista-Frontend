@@ -1,55 +1,29 @@
-import React from "react";
+import React, { useContext } from "react";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import { getBasket } from "../../helpers/basketHelper";
 import CartProductList from "../Cart/CartProductList";
 import CartPageHeading from "./CartPageHeading";
 import CartPageSubTotal from "./CartPageSubTotal";
+import { BasketContext } from "../../Context/BasketContext";
 import "../../css/Cart.css";
 
 function CartPage() {
-  var [basket, setBasket] = React.useState({});
-  React.useEffect(
-    function () {
-      getBasket()
-        .then((currentBasket) => {
-          if (currentBasket) {
-            setBasket(currentBasket);
-            window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
-          }
-        })
-        .catch((e) => {
-          return null;
-        });
-    },
-    [basket.id, basket.totalPrice]
-  );
-  function cartProductRemoveBasketHandler() {
-    getBasket()
-      .then((currentBasket) => {
-        if (currentBasket) {
-          setBasket(currentBasket);
-        }
-      })
-      .catch((e) => {
-        return null;
-      });
-  }
+  var { basketData } = useContext(BasketContext);
+  React.useEffect(function () {
+    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+  }, []);
   return (
     <div className="cartPage">
-      <CartPageHeading count={basket.count} />
+      <CartPageHeading count={basketData.count} />
       <Container>
         <Row>
           <Col xs={12} sm={12} md={12} lg={7}>
             <div className="cartPage-main">
-              {basket && basket.products && basket.products.length > 0 ? (
-                <CartProductList
-                  basketData={basket}
-                  cartProductRemoveBasketHandler={
-                    cartProductRemoveBasketHandler
-                  }
-                />
+              {basketData &&
+              basketData.products &&
+              basketData.products.length > 0 ? (
+                <CartProductList basketData={basketData} />
               ) : (
                 <p style={{ fontWeight: "500" }}>No Items in the cart</p>
               )}
@@ -57,9 +31,9 @@ function CartPage() {
           </Col>
           <Col xs={12} sm={12} md={12} lg={5}>
             <CartPageSubTotal
-              totalPrice={basket.totalPrice}
-              count={basket.count}
-              taxPrice={basket.taxPrice}
+              totalPrice={basketData.totalPrice}
+              count={basketData.count}
+              taxPrice={basketData.taxPrice}
             />
           </Col>
         </Row>

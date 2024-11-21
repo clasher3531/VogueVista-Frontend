@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
@@ -6,9 +6,11 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import { setPaymentInformation } from "../../helpers/basketHelper";
 import { useNavigate } from "react-router-dom";
+import { BasketContext } from "../../Context/BasketContext";
 
 function CheckoutBillingSection(props) {
   const navigate = useNavigate();
+  const { setBasketData } = useContext(BasketContext);
   const [validated, setValidated] = React.useState(false);
   const handleSubmit = (event) => {
     const form = event.target;
@@ -27,7 +29,8 @@ function CheckoutBillingSection(props) {
       };
       setPaymentInformation(paymentData)
         .then((basketResponse) => {
-          if (basketResponse) {
+          if (!basketResponse.error) {
+            setBasketData(basketResponse.basket);
             navigate("/checkout/review");
           }
         })

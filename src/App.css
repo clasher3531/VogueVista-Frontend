@@ -1,5 +1,6 @@
 .App {
   margin: 10px;
+  width: 100%;
 }
 
 .App-logo {
@@ -8,7 +9,7 @@
 }
 
 body {
-  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -54,10 +55,10 @@ body {
   background-color: #c67605;
 }
 #lblCartCount {
-    font-size: 12px;
-    background: lightgrey;
-    color: black;
-    padding: 0 5px;
-    vertical-align: top;
-    margin-left: -3px; 
+  font-size: 12px;
+  background: lightgrey;
+  color: black;
+  padding: 0 5px;
+  vertical-align: top;
+  margin-left: -3px;
 }
