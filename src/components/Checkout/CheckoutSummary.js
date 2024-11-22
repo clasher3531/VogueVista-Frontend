@@ -18,7 +18,6 @@ function CheckoutSummary(props) {
     navigate("/cart");
   }
   function proccedPaymentHandler() {
-    props.emailaddressbutton.current.click();
     props.shippingbuttonref.current.click();
   }
   function proceedReviewHandler() {

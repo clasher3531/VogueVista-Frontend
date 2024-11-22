@@ -12,9 +12,11 @@ import "../../css/checkout/checkout.css";
 
 function CheckoutPage() {
   const { basketData, setBasketData } = useContext(BasketContext);
+  const [emailAddress, setEmailAddress] = React.useState(
+    basketData && basketData.email ? basketData.email : null
+  );
+  const [isValidEmailAddress, setValidEmailAddress] = React.useState(null);
   var shippingButton = React.createRef();
-  var emailAddressButton = React.createRef();
-  var emailAddressInput = React.createRef();
   React.useEffect(function () {
     window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
   }, []);
@@ -36,15 +38,18 @@ function CheckoutPage() {
           <Col xs={12} sm={12} md={12} lg={7}>
             <div className="checkout-login">
               <CheckoutLogin
-                emailaddressbutton={emailAddressButton}
-                emailref={emailAddressInput}
+                isValidEmailAddress={isValidEmailAddress}
+                setEmailAddress={setEmailAddress}
+                emailAddress={emailAddress}
+                setValidEmailAddress={setValidEmailAddress}
               />
             </div>
             <div className="checkout-shipping">
               <CheckoutShipping
                 shippingbuttonref={shippingButton}
                 shippingAddress={basketData.shippingAddress}
-                emailrefinput={emailAddressInput}
+                setValidEmailAddress={setValidEmailAddress}
+                emailAddress={emailAddress}
               />
             </div>
             <div className="checkout-shipping-method">
@@ -59,7 +64,6 @@ function CheckoutPage() {
               <CheckoutSummary
                 basketData={basketData}
                 shippingbuttonref={shippingButton}
-                emailaddressbutton={emailAddressButton}
               />
             </div>
           </Col>

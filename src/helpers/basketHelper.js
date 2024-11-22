@@ -56,7 +56,7 @@ export async function removeProductFromBasket(pid) {
   return basketResponse.basket;
 }
 
-export async function setBasketShippingAddress(shippingAddress) {
+export async function setBasketShippingAddress(shippingAddress, email) {
   if (shippingAddress === null) {
     return null;
   }
@@ -64,6 +64,7 @@ export async function setBasketShippingAddress(shippingAddress) {
     updates: {
       shippingAddress: shippingAddress,
       billingAddress: shippingAddress,
+      email: email,
     },
     basketUUID: getBasketUUID(),
   };

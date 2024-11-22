@@ -23,6 +23,12 @@ function CheckoutShipping(props) {
     const form = event.target;
     event.preventDefault();
     var isFormValid = true;
+    var isEmailValid = emailRegex.test(props.emailAddress);
+    if (!isEmailValid) {
+      props.setValidEmailAddress(false);
+      event.stopPropagation();
+      isFormValid = false;
+    }
     if (form.checkValidity() === false) {
       event.stopPropagation();
       isFormValid = false;
@@ -41,17 +47,13 @@ function CheckoutShipping(props) {
     };
     if (isFormValid) {
       setValidated(false);
-      var basketResponse = await setBasketShippingAddress(formData);
-      if (
-        !basketResponse.error &&
-        basketResponse.basket &&
-        basketResponse.basket.email
-      ) {
-        var email = emailRegex.test(basketResponse.basket.email);
-        if (email) {
-          setBasketData(basketResponse.basket);
-          navigate("/checkout/payment");
-        }
+      var basketResponse = await setBasketShippingAddress(
+        formData,
+        props.emailAddress
+      );
+      if (!basketResponse.error) {
+        setBasketData(basketResponse.basket);
+        navigate("/checkout/payment");
       }
     }
   };
