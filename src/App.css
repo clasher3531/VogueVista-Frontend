@@ -62,3 +62,19 @@ body {
   vertical-align: top;
   margin-left: -3px;
 }
+
+.shimmer-main {
+  width: 18rem;
+  height: 22rem;
+  background-color: #f2f2f2;
+  position: relative;
+  margin: 1rem;
+}
+
+.shimmer-cart-main {
+  width: 100%;
+  height: 12rem;
+  background-color: #f2f2f2;
+  position: relative;
+  margin-top: 1rem;
+}

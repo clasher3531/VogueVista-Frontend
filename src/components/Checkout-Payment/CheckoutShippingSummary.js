@@ -37,7 +37,7 @@ function CheckoutShippingSummary(props) {
         <br></br>
         <Row>
           <Col>
-            {shippingAddress !== null ? (
+            {shippingAddress && shippingAddress.address1 ? (
               <div>
                 <p>
                   {shippingAddress.title}&nbsp;{shippingAddress.firstName}&nbsp;
@@ -55,7 +55,7 @@ function CheckoutShippingSummary(props) {
                 </p>
               </div>
             ) : (
-              ""
+              <p style={{ fontWeight: "bolder" }}>Please Wait....</p>
             )}
           </Col>
         </Row>

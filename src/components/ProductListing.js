@@ -3,6 +3,7 @@ import React from "react";
 import { Row, Col } from "react-bootstrap";
 import "../css/ProductList.css";
 import { fetchAllProducts } from "../services/productFetchService";
+import ShimmerProductList from "./Shimmer/ShimmerProductList";
 
 function ProductListing(props) {
   var [products, setProducts] = React.useState([]);
@@ -41,19 +42,23 @@ function ProductListing(props) {
     <div className="productListing">
       <h2>{props.category}</h2>
       <Row>
-        {products.map((product) => {
-          return (
-            <Col xs={6} sm={6} md={6} lg={3} key={product.id}>
-              <ProductCard
-                id={product.id}
-                image={product.image}
-                title={product.title}
-                description={product.description}
-                price={product.price}
-              />
-            </Col>
-          );
-        })}
+        {products && products.length > 0 ? (
+          products.map((product) => {
+            return (
+              <Col xs={6} sm={6} md={6} lg={3} key={product.id}>
+                <ProductCard
+                  id={product.id}
+                  image={product.image}
+                  title={product.title}
+                  description={product.description}
+                  price={product.price}
+                />
+              </Col>
+            );
+          })
+        ) : (
+          <ShimmerProductList count={8} />
+        )}
       </Row>
     </div>
   );

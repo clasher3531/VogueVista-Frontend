@@ -1,4 +1,5 @@
 import React from "react";
+import ShimmerProductList from "../Shimmer/ShimmerProductList";
 import { fetchAllProducts } from "../../services/productFetchService";
 import ProductCard from "../Product/ProductCard";
 import { Row, Col } from "react-bootstrap";
@@ -48,21 +49,25 @@ function FeaturedProducts() {
         </Row>
       </div>
       <Row>
-        {ProductData.filter((product) => {
-          return product.featured === true;
-        }).map((product) => {
-          return (
-            <Col xs={6} sm={6} md={6} lg={3} key={product.id}>
-              <ProductCard
-                id={product.id}
-                image={product.image}
-                title={product.title}
-                description={product.description}
-                price={product.price}
-              />
-            </Col>
-          );
-        })}
+        {ProductData && ProductData.length > 0 ? (
+          ProductData.filter((product) => {
+            return product.featured === true;
+          }).map((product) => {
+            return (
+              <Col xs={6} sm={6} md={6} lg={3} key={product.id}>
+                <ProductCard
+                  id={product.id}
+                  image={product.image}
+                  title={product.title}
+                  description={product.description}
+                  price={product.price}
+                />
+              </Col>
+            );
+          })
+        ) : (
+          <ShimmerProductList count={4} />
+        )}
       </Row>
     </div>
   );

@@ -39,7 +39,7 @@ function CheckoutSummary(props) {
       <Row>
         <Col lg="8" sm="8" xs="8" md="8">
           <h5>ORDER SUMMARY</h5>
-          <p>{basketData.count}&nbsp;Item</p>
+          <p>{basketData.count ? basketData.count : 0}&nbsp;Item</p>
         </Col>
         <Col lg="4" sm="4" xs="4" md="4">
           <Button variant="dark" onClick={modifyButtonHandler}>
@@ -49,11 +49,17 @@ function CheckoutSummary(props) {
       </Row>
       <CartProductList basketData={basketData} isCheckoutPage={true} />
       <CheckoutSummarySubTotal
-        totalprice={basketData.totalPrice}
-        shippingmethod={basketData.shippingMethod}
-        shippingprice={basketData.shippingMethodPrice}
-        totaltax={basketData.taxPrice}
-        netprice={basketData.totalNetPrice}
+        totalprice={basketData.totalPrice ? basketData.totalPrice : 0}
+        shippingmethod={
+          basketData.shippingMethod
+            ? basketData.shippingMethod
+            : "Standard Delivery"
+        }
+        shippingprice={
+          basketData.shippingMethodPrice ? basketData.shippingMethodPrice : 0
+        }
+        totaltax={basketData.taxPrice ? basketData.taxPrice : 0}
+        netprice={basketData.totalNetPrice ? basketData.totalNetPrice : 0}
       />
       {basketData.count > 0 ? (
         <div className="proceed-checkout-payment-details">
@@ -84,7 +90,11 @@ function CheckoutSummary(props) {
           )}
         </div>
       ) : (
-        ""
+        <div className="proceed-checkout-payment-details">
+          <Button variant="dark" style={{ width: "100%" }} disabled>
+            LOADING....
+          </Button>
+        </div>
       )}
     </div>
   );
