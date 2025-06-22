@@ -1,7 +1,7 @@
 import React from "react";
 
-function ShimmerProductCard() {
-  return <div className="shimmer-main"></div>;
+function ShimmerProductCard(props) {
+  return <div key={props.value} className="shimmer-main"></div>;
 }
 
 export default ShimmerProductCard;
