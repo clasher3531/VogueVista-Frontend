@@ -26,6 +26,7 @@ function ProductCard(props) {
           className="card-img-top product-image-main"
           src={props.image}
           alt=""
+          loading="lazy"
         />
         <div className="card-body">
           <h5 className="card-title">{props.title}</h5>
