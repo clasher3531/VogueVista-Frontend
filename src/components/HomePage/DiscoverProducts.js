@@ -26,6 +26,7 @@ function DiscoverProducts() {
               alt=""
               className="img-fluid"
               id="women-clothing"
+              loading="lazy"
             />
           </div>
         </div>
@@ -39,6 +40,7 @@ function DiscoverProducts() {
               alt=""
               className="img-fluid"
               id="mens-clothing"
+              loading="lazy"
             />
           </div>
 
@@ -51,6 +53,7 @@ function DiscoverProducts() {
               alt=""
               className="img-fluid"
               id="jewellery"
+              loading="lazy"
             />
           </div>
         </div>
