@@ -64,8 +64,8 @@ body {
 }
 
 .shimmer-main {
-  width: 18rem;
-  height: 22rem;
+  width: 13rem;
+  height: 15rem;
   background-color: #f2f2f2;
   position: relative;
   margin: 1rem;
@@ -77,4 +77,11 @@ body {
   background-color: #f2f2f2;
   position: relative;
   margin-top: 1rem;
+}
+
+.shimmer-product-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+  padding-left: 3rem;
 }
