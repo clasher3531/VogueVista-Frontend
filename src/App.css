@@ -1,6 +1,6 @@
 .App {
-  margin: 10px;
   width: 100%;
+  overflow: hidden;
 }
 
 .App-logo {

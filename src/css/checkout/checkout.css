@@ -8,6 +8,10 @@
   }
 }
 
+.checkout-page-main {
+  overflow: hidden;
+}
+
 @media only screen and (min-width: 992px) {
   .guest-container {
     border-right: 1px solid grey;
