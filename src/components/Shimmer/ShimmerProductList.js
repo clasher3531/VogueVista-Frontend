@@ -1,4 +1,5 @@
 import React from "react";
+import { Row, Col } from "react-bootstrap";
 import ShimmerProductCard from "./ShimmerProductCard";
 
 function ShimmerProductList(props) {
@@ -7,11 +8,15 @@ function ShimmerProductList(props) {
     array.push(i + 10);
   }
   return (
-    <div className="shimmer-product-list">
+    <Row>
       {array.map((value) => {
-        return <ShimmerProductCard value={value} />;
+        return (
+          <Col xs={6} sm={6} md={6} lg={3} key={value}>
+            <ShimmerProductCard value={value} />
+          </Col>
+        );
       })}
-    </div>
+    </Row>
   );
 }
 

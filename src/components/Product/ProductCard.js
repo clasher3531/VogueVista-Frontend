@@ -8,11 +8,13 @@ import { BasketContext } from "../../Context/BasketContext";
 
 function ProductCard(props) {
   var [modalShow, setModalShow] = React.useState(false);
-  const { setBasketData } = useContext(BasketContext);
+  const { setBasketData, setIsLoader } = useContext(BasketContext);
   async function addToCartButtonClickHandler() {
+    setIsLoader(true);
     var product = await getProduct(props.id);
     if (product) {
       var basket = await addProductToBasket(product);
+      setIsLoader(false);
       if (basket) {
         setBasketData(basket);
         setModalShow(true);

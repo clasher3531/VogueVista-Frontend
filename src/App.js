@@ -17,6 +17,7 @@ import "./App.css";
 
 function App() {
   var [basketData, setBasketData] = React.useState({});
+  var [isLoader, setIsLoader] = React.useState(false);
   React.useEffect(function () {
     getBasket()
       .then((currentBasket) => {
@@ -29,8 +30,17 @@ function App() {
       });
   }, []);
   return (
-    <BasketContext.Provider value={{ basketData, setBasketData }}>
+    <BasketContext.Provider
+      value={{ basketData, setBasketData, isLoader, setIsLoader }}
+    >
       <div className="App">
+        <div className={isLoader ? "loader" : "loader hidden"}>
+          <img
+            src={require("./images/VVLoader.gif")}
+            alt="Loading..."
+            className="loader-image"
+          />
+        </div>
         <Campaign />
         <HeaderUtility />
         <Outlet />

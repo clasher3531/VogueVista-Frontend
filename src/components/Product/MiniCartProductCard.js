@@ -5,9 +5,11 @@ import "../../css/MiniCartProductCard.css";
 import { BasketContext } from "../../Context/BasketContext";
 
 function MiniCartProductCard(props) {
-  const { setBasketData } = useContext(BasketContext);
+  const { setBasketData, setIsLoader } = useContext(BasketContext);
   async function removeBasketProductHandler() {
+    setIsLoader(true);
     var basket = await removeProductFromBasket(props.id);
+    setIsLoader(false);
     if (basket) {
       setBasketData(basket);
     }

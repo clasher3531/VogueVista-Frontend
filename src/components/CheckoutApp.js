@@ -7,6 +7,7 @@ import { getBasket } from "../helpers/basketHelper";
 
 function CheckoutApp() {
   var [basketData, setBasketData] = React.useState({});
+  var [isLoader, setIsLoader] = React.useState(false);
   React.useEffect(function () {
     getBasket()
       .then((currentBasket) => {
@@ -19,8 +20,17 @@ function CheckoutApp() {
       });
   }, []);
   return (
-    <BasketContext.Provider value={{ basketData, setBasketData }}>
+    <BasketContext.Provider
+      value={{ basketData, setBasketData, isLoader, setIsLoader }}
+    >
       <div className="checkout-page-main">
+        <div className={isLoader ? "loader" : "loader hidden"}>
+          <img
+            src={require("../images/VVLoader.gif")}
+            alt="Loading..."
+            className="loader-image"
+          />
+        </div>
         <div className="checkout-logo">
           <NJLogo />
         </div>

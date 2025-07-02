@@ -6,11 +6,13 @@ import { BasketContext } from "../../Context/BasketContext";
 
 function CartProductCard(props) {
   const [show, setShow] = React.useState(false);
-  const { setBasketData } = useContext(BasketContext);
+  const { setBasketData, setIsLoader } = useContext(BasketContext);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   async function removeBasketProductHandler() {
+    setIsLoader(true);
     var basket = await removeProductFromBasket(props.id);
+    setIsLoader(false);
     if (basket) {
       setBasketData(basket);
       handleClose();

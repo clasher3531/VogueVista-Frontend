@@ -13,7 +13,7 @@ import { BasketContext } from "../../Context/BasketContext";
 
 function CheckoutSummary(props) {
   const navigate = useNavigate();
-  const { basketData } = useContext(BasketContext);
+  const { basketData, setIsLoader } = useContext(BasketContext);
   function modifyButtonHandler() {
     navigate("/cart");
   }
@@ -25,12 +25,22 @@ function CheckoutSummary(props) {
   }
   async function placeOrderButtonHandler() {
     if (basketData) {
+      setIsLoader(true);
       var order = await createOrderFromBasket(basketData);
       if (order) {
         var authorizationResult = await handlePayment(order);
+        setIsLoader(false);
         if (authorizationResult.success) {
           navigate("/order-confirm", { state: order.orderNumber });
+        } else {
+          setIsLoader(false);
+          alert(
+            "Payment failed. Please try again or contact customer support."
+          );
         }
+      } else {
+        setIsLoader(false);
+        alert("Failed to create order. Please try again later.");
       }
     }
   }
