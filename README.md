@@ -1,69 +1,88 @@
-# VogueVista Frontend
+# VogueVista E-commerce Frontend
 
-This project is created in ReactJS.
+VogueVista is a modern, responsive e-commerce web application built with ReactJS and bundled using Webpack 5. It offers a seamless shopping experience for users, featuring a stylish interface, fast performance, and a robust checkout process.
 
-## Compatiblity
+## Features
 
-This project is compatible with NodeJS version 14.21.3 and React version 18.2.0
+- 🛒 Modern e-commerce UI/UX
+- 🔍 Product discovery, categories, and search
+- 🛍️ Shopping cart and mini-cart
+- 💳 Secure checkout and order confirmation
+- 📱 Responsive design for desktop and mobile
+- ⚡ Fast loading with code splitting and optimized assets
+- 🛠️ Built and bundled with Webpack 5
 
-## Available Scripts
+## Tech Stack
 
-In the project directory, you can run:
+- **Frontend:** React 18, React Router
+- **Build Tool:** Webpack 5
+- **Styling:** CSS, Bootstrap 5
+- **State Management:** React Context API
 
-### `npm run start`
+## Getting Started
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Prerequisites
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- Node.js v20.15.1 or higher
+- npm (comes with Node.js)
 
-### `npm run build`
+### Installation
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. Clone the repository:
+   ```sh
+   git clone <your-repo-url>
+   cd VogueVista-Frontend
+   ```
+2. Install dependencies:
+   ```sh
+   npm install
+   ```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Development
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Start the development server (Webpack Dev Server):
 
-### `npm run eject`
+```sh
+npm run start
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Open [http://localhost:3000](http://localhost:3000) (or your chosen port) to view the app in your browser. The page reloads automatically on code changes.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Production Build
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Create an optimized production build:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+```sh
+npm run build
+```
 
-## Learn More
+The build output will be in the `dist` folder, ready for deployment.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Project Structure
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- `src/` — React components, styles, and app logic
+- `public/` — Static assets and HTML template
+- `webpack.config.js` — Webpack 5 configuration
+- `package.json` — Project scripts and dependencies
 
-### Code Splitting
+## Webpack 5 Build Process
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- Uses `webpack-dev-server` for local development with hot reloading
+- Bundles JS, CSS, and image assets
+- Minifies and hashes files for production
+- Handles environment variables and custom port configuration
 
-### Analyzing the Bundle Size
+## Customization
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- Change the port by setting the `PORT` environment variable:
+  - On Windows (cmd): `set PORT=4000 && npm run start`
+  - On macOS/Linux: `PORT=4000 npm run start`
+- Update branding, colors, and assets in the `public/` and `src/` folders
 
-### Making a Progressive Web App
+## Contributing
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Pull requests are welcome! For major changes, please open an issue first to discuss what you would like to change.
 
-### Advanced Configuration
+## License
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This project is licensed under the internet source License.
