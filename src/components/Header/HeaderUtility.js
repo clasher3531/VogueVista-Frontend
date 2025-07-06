@@ -48,7 +48,7 @@ function HeaderUtility() {
         >
           {!isSmallMenuShow ? (
             <img
-              src={require("../../images/menu-small.png")}
+              src={require("../../images/menu-small.webp")}
               alt=""
               width="20"
               height="20"
@@ -56,7 +56,7 @@ function HeaderUtility() {
           ) : (
             <img
               className="cross-img"
-              src={require("../../images/cross-icon.png")}
+              src={require("../../images/cross-icon.webp")}
               alt=""
               width="25"
               height="25"

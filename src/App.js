@@ -4,16 +4,20 @@ import HeaderUtility from "../src/components/Header/HeaderUtility";
 import { getBasket } from "../src/helpers/basketHelper";
 import Footer from "../src/components/Footer/Footer";
 import Campaign from "../src/components/Header/Campaign";
-import CartPage from "../src/components/Cart/CartPage";
-import CheckoutApp from "./components/CheckoutApp";
 import CheckoutPage from "../src/components/Checkout/CheckoutPage";
 import CheckoutPaymentPage from "../src/components/Checkout-Payment/CheckoutPaymentPage";
 import CheckoutReviewPage from "../src/components/Checkout-Review/CheckoutReviewPage";
-import OrderConfirm from "../src/components/Checkout-Review/OrderConfirm";
 import AllProducts from "../src/components/Category/AllProducts";
 import { createBrowserRouter, Outlet } from "react-router-dom";
 import { BasketContext } from "./Context/BasketContext";
+import { lazy, Suspense } from "react";
 import "./App.css";
+
+const CheckoutApp = lazy(() => import("./components/CheckoutApp"));
+const CartPage = lazy(() => import("./components/Cart/CartPage"));
+const OrderConfirm = lazy(() =>
+  import("./components/Checkout-Review/OrderConfirm")
+);
 
 function App() {
   var [basketData, setBasketData] = React.useState({});
@@ -61,7 +65,11 @@ export const reactRouter = createBrowserRouter([
       },
       {
         path: "/cart",
-        element: <CartPage />,
+        element: (
+          <Suspense>
+            <CartPage />
+          </Suspense>
+        ),
       },
       {
         path: "/allProducts",
@@ -85,13 +93,21 @@ export const reactRouter = createBrowserRouter([
       },
       {
         path: "/order-confirm",
-        element: <OrderConfirm />,
+        element: (
+          <Suspense>
+            <OrderConfirm />
+          </Suspense>
+        ),
       },
     ],
   },
   {
     path: "/checkout",
-    element: <CheckoutApp />,
+    element: (
+      <Suspense fallback={<h1>Loading........</h1>}>
+        <CheckoutApp />
+      </Suspense>
+    ),
     children: [
       {
         path: "/checkout",

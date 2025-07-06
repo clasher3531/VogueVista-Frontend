@@ -22,7 +22,7 @@ function DiscoverProducts() {
               Women
             </p>
             <img
-              src={require("../../images/model_4.png")}
+              src={require("../../images/model_4.webp")}
               alt=""
               className="img-fluid"
               id="women-clothing"
@@ -36,7 +36,7 @@ function DiscoverProducts() {
               Men
             </p>
             <img
-              src={require("../../images/model_5.png")}
+              src={require("../../images/model_5.webp")}
               alt=""
               className="img-fluid"
               id="mens-clothing"
@@ -49,7 +49,7 @@ function DiscoverProducts() {
               Jewellery
             </p>
             <img
-              src={require("../../images/jewellery-green.png")}
+              src={require("../../images/jewellery-green.webp")}
               alt=""
               className="img-fluid"
               id="jewellery"
