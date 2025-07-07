@@ -5,6 +5,7 @@ import Footer from "./Footer/Footer";
 import { BasketContext } from "../Context/BasketContext";
 import { getBasket } from "../helpers/basketHelper";
 import LoadingPage from "./Error/LoadingPage";
+import ErrorBoundaryComponent from "./Error/ErrorBoundaryComponent";
 
 function CheckoutApp() {
   var [basketData, setBasketData] = React.useState({});
@@ -24,14 +25,16 @@ function CheckoutApp() {
     <BasketContext.Provider
       value={{ basketData, setBasketData, isLoader, setIsLoader }}
     >
-      <div className="checkout-page-main">
-        {isLoader ? <LoadingPage /> : ""}
-        <div className="checkout-logo">
-          <NJLogo />
+      <ErrorBoundaryComponent>
+        <div className="checkout-page-main">
+          {isLoader ? <LoadingPage /> : ""}
+          <div className="checkout-logo">
+            <NJLogo />
+          </div>
+          <Outlet />
+          <Footer />
         </div>
-        <Outlet />
-        <Footer />
-      </div>
+      </ErrorBoundaryComponent>
     </BasketContext.Provider>
   );
 }
