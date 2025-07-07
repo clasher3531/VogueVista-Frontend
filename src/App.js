@@ -8,10 +8,13 @@ import CheckoutPage from "../src/components/Checkout/CheckoutPage";
 import CheckoutPaymentPage from "../src/components/Checkout-Payment/CheckoutPaymentPage";
 import CheckoutReviewPage from "../src/components/Checkout-Review/CheckoutReviewPage";
 import AllProducts from "../src/components/Category/AllProducts";
+import LoadingPage from "./components/Error/LoadingPage";
+import ErrorBoundaryComponent from "./components/Error/ErrorBoundaryComponent";
 import { createBrowserRouter, Outlet } from "react-router-dom";
 import { BasketContext } from "./Context/BasketContext";
 import { lazy, Suspense } from "react";
 import "./App.css";
+import NotFoundPage from "./components/Error/404Page";
 
 const CheckoutApp = lazy(() => import("./components/CheckoutApp"));
 const CartPage = lazy(() => import("./components/Cart/CartPage"));
@@ -37,19 +40,15 @@ function App() {
     <BasketContext.Provider
       value={{ basketData, setBasketData, isLoader, setIsLoader }}
     >
-      <div className="App">
-        <div className={isLoader ? "loader" : "loader hidden"}>
-          <img
-            src={require("./images/VVLoader.gif")}
-            alt="Loading..."
-            className="loader-image"
-          />
+      <ErrorBoundaryComponent>
+        <div className="App">
+          {isLoader ? <LoadingPage /> : ""}
+          <Campaign />
+          <HeaderUtility />
+          <Outlet />
+          <Footer />
         </div>
-        <Campaign />
-        <HeaderUtility />
-        <Outlet />
-        <Footer />
-      </div>
+      </ErrorBoundaryComponent>
     </BasketContext.Provider>
   );
 }
@@ -66,7 +65,7 @@ export const reactRouter = createBrowserRouter([
       {
         path: "/cart",
         element: (
-          <Suspense>
+          <Suspense fallback={<LoadingPage />}>
             <CartPage />
           </Suspense>
         ),
@@ -94,17 +93,21 @@ export const reactRouter = createBrowserRouter([
       {
         path: "/order-confirm",
         element: (
-          <Suspense>
+          <Suspense fallback={<LoadingPage />}>
             <OrderConfirm />
           </Suspense>
         ),
+      },
+      {
+        path: "*",
+        element: <NotFoundPage />,
       },
     ],
   },
   {
     path: "/checkout",
     element: (
-      <Suspense fallback={<h1>Loading........</h1>}>
+      <Suspense fallback={<LoadingPage />}>
         <CheckoutApp />
       </Suspense>
     ),
@@ -120,6 +123,10 @@ export const reactRouter = createBrowserRouter([
       {
         path: "/checkout/payment",
         element: <CheckoutPaymentPage />,
+      },
+      {
+        path: "*",
+        element: <NotFoundPage />,
       },
     ],
   },
