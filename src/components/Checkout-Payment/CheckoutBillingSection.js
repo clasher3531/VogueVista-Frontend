@@ -10,15 +10,17 @@ import { BasketContext } from "../../Context/BasketContext";
 
 function CheckoutBillingSection(props) {
   const navigate = useNavigate();
-  const { setBasketData } = useContext(BasketContext);
+  const { setBasketData, setIsLoader } = useContext(BasketContext);
   const [validated, setValidated] = React.useState(false);
   const handleSubmit = (event) => {
     const form = event.target;
     event.preventDefault();
+    setIsLoader(true);
     var isFormValid = true;
     if (form.checkValidity() === false) {
       event.stopPropagation();
       isFormValid = false;
+      setIsLoader(false);
     }
     if (isFormValid) {
       var paymentData = {
@@ -31,10 +33,12 @@ function CheckoutBillingSection(props) {
         .then((basketResponse) => {
           if (!basketResponse.error) {
             setBasketData(basketResponse.basket);
+            setIsLoader(false);
             navigate("/checkout/review");
           }
         })
         .catch((e) => {
+          setIsLoader(false);
           return null;
         });
     }

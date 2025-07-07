@@ -8,6 +8,7 @@ import CheckoutPage from "../src/components/Checkout/CheckoutPage";
 import CheckoutPaymentPage from "../src/components/Checkout-Payment/CheckoutPaymentPage";
 import CheckoutReviewPage from "../src/components/Checkout-Review/CheckoutReviewPage";
 import AllProducts from "../src/components/Category/AllProducts";
+import LoadingPage from "./components/Error/LoadingPage";
 import { createBrowserRouter, Outlet } from "react-router-dom";
 import { BasketContext } from "./Context/BasketContext";
 import { lazy, Suspense } from "react";
@@ -38,13 +39,7 @@ function App() {
       value={{ basketData, setBasketData, isLoader, setIsLoader }}
     >
       <div className="App">
-        <div className={isLoader ? "loader" : "loader hidden"}>
-          <img
-            src={require("./images/VVLoader.gif")}
-            alt="Loading..."
-            className="loader-image"
-          />
-        </div>
+        {isLoader ? <LoadingPage /> : ""}
         <Campaign />
         <HeaderUtility />
         <Outlet />
@@ -66,7 +61,7 @@ export const reactRouter = createBrowserRouter([
       {
         path: "/cart",
         element: (
-          <Suspense>
+          <Suspense fallback={<LoadingPage />}>
             <CartPage />
           </Suspense>
         ),
@@ -94,7 +89,7 @@ export const reactRouter = createBrowserRouter([
       {
         path: "/order-confirm",
         element: (
-          <Suspense>
+          <Suspense fallback={<LoadingPage />}>
             <OrderConfirm />
           </Suspense>
         ),
@@ -104,7 +99,7 @@ export const reactRouter = createBrowserRouter([
   {
     path: "/checkout",
     element: (
-      <Suspense fallback={<h1>Loading........</h1>}>
+      <Suspense fallback={<LoadingPage />}>
         <CheckoutApp />
       </Suspense>
     ),

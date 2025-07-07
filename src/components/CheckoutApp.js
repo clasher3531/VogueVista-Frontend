@@ -4,6 +4,7 @@ import { Outlet } from "react-router-dom";
 import Footer from "./Footer/Footer";
 import { BasketContext } from "../Context/BasketContext";
 import { getBasket } from "../helpers/basketHelper";
+import LoadingPage from "./Error/LoadingPage";
 
 function CheckoutApp() {
   var [basketData, setBasketData] = React.useState({});
@@ -24,13 +25,7 @@ function CheckoutApp() {
       value={{ basketData, setBasketData, isLoader, setIsLoader }}
     >
       <div className="checkout-page-main">
-        <div className={isLoader ? "loader" : "loader hidden"}>
-          <img
-            src={require("../images/VVLoader.gif")}
-            alt="Loading..."
-            className="loader-image"
-          />
-        </div>
+        {isLoader ? <LoadingPage /> : ""}
         <div className="checkout-logo">
           <NJLogo />
         </div>

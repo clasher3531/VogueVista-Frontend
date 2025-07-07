@@ -10,7 +10,7 @@ const emailRegex = /[A-Za-z0-9._%+]+@[a-z0-9A-Z]+\.[a-z]{2,}$/;
 
 function CheckoutShipping(props) {
   const navigate = useNavigate();
-  const { basketData, setBasketData } = useContext(BasketContext);
+  const { basketData, setBasketData, setIsLoader } = useContext(BasketContext);
   const [validated, setValidated] = React.useState(false);
   const [shippingAddress, setShippingAddress] = React.useState({});
   React.useEffect(
@@ -22,17 +22,20 @@ function CheckoutShipping(props) {
   const handleSubmit = async (event) => {
     const form = event.target;
     event.preventDefault();
+    setIsLoader(true);
     var isFormValid = true;
     var isEmailValid = emailRegex.test(props.emailAddress);
     if (!isEmailValid) {
       props.setValidEmailAddress(false);
       event.stopPropagation();
       isFormValid = false;
+      setIsLoader(false);
     }
     if (form.checkValidity() === false) {
       event.stopPropagation();
       isFormValid = false;
       setValidated(true);
+      setIsLoader(false);
     }
     var formData = {
       title: form.title.value,
@@ -53,6 +56,7 @@ function CheckoutShipping(props) {
       );
       if (!basketResponse.error) {
         setBasketData(basketResponse.basket);
+        setIsLoader(false);
         navigate("/checkout/payment");
       }
     }
