@@ -10,6 +10,7 @@ module.exports = (env, argv) => {
     output: {
       path: path.resolve(__dirname, "dist"),
       filename: "bundle.[contenthash].js",
+      publicPath: "/",
       clean: true,
     },
     module: {
