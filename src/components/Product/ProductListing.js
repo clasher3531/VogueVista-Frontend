@@ -1,9 +1,9 @@
-import ProductCard from "./Product/ProductCard";
+import ProductCard from "./ProductCard";
 import React from "react";
 import { Row, Col } from "react-bootstrap";
-import "../css/ProductList.css";
-import { fetchAllProducts } from "../services/productFetchService";
-import ShimmerProductList from "./Shimmer/ShimmerProductList";
+import "../../css/ProductList.css";
+import { fetchAllProducts } from "../../services/productFetchService";
+import ShimmerProductList from "../Shimmer/ShimmerProductList";
 
 function ProductListing(props) {
   var [products, setProducts] = React.useState([]);

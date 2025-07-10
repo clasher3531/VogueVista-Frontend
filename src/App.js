@@ -1,5 +1,5 @@
 import React from "react";
-import HomePage from "./components/HomePage";
+import HomePage from "./components/HomePage/HomePage";
 import HeaderUtility from "../src/components/Header/HeaderUtility";
 import { getBasket } from "../src/helpers/basketHelper";
 import Footer from "../src/components/Footer/Footer";
